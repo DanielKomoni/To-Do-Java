@@ -129,10 +129,14 @@ input {
 <body>
 <div id="myDIV" class="header">
 
+    <form action="/logout" method="post">
+        <input type="submit" value="Sign Out"/>
+    </form>
     <h2>My To Do List</h2>
-    <form action="/" method="post" >
+    <form action="/Main" method="post"  >
         <input type="text" name="full_text" placeholder="Title...">
-        <button type="submit" class="addBtn">Add</button>
+        <button  type="submit"  class="addBtn">Add</button>
+
     </form>
 
 </div>
@@ -140,7 +144,7 @@ input {
 <ul id="myUL">
     <div th:each="el:${todo}">
         <li th:text="${el.full_text}" />
-        <a th:href="'/'+ ${el.id}" > Done</a>
+        <a th:href="'/Main/'+ ${el.id}"  > Done</a>
     </div>
 
 
